@@ -1,8 +1,6 @@
 <script setup>
-import MainLogo from '@/components/MainLogo.vue'
-import SearchInput from '@/components/SearchInput.vue'
-import MainMenu from '@/components/MainMenu.vue'
-import WishlistButton from '@/components/WishlistButton.vue'
+import MainLogo from '@/components/shared/MainLogo.vue'
+import SearchInput from '@/components/layout/SearchInput.vue'
 </script>
 
 <template>
@@ -11,11 +9,6 @@ import WishlistButton from '@/components/WishlistButton.vue'
       <div class="left">
         <MainLogo />
         <SearchInput class="search" />
-      </div>
-
-      <div class="right">
-        <MainMenu />
-        <WishlistButton />
       </div>
     </div>
   </nav>

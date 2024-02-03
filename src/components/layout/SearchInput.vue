@@ -1,10 +1,18 @@
 <script setup>
 import searchIcon from '@/assets/search.svg'
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+const searchKey = ref('')
+const router = useRouter()
+const onSubmit = () => {
+  router.push(`/search/?q=${searchKey.value}`)
+}
 </script>
 
 <template>
-  <form class="search-input">
-    <input type="search" placeholder="Search Movies and series" />
+  <form class="search-input" @submit.prevent="onSubmit">
+    <input type="search" v-model="searchKey" placeholder="Search Movies and series" />
     <button type="submit">
       <img :src="searchIcon" alt="search" />
     </button>

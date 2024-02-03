@@ -15,3 +15,19 @@ a {
 a:hover {
   color: var(--color-link-hover)
 }
+
+
+.show-list {
+  display: flex;
+  margin: 0 -1.125rem;
+  flex-wrap: wrap;
+
+  .show-col {
+    padding: 1.125rem;
+    width: 20%;
+  }
+}
+
+.vue-skeletor--text {
+  border-radius: 8px;
+}

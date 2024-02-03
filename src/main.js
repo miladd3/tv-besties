@@ -1,3 +1,4 @@
+import 'vue-skeletor/dist/vue-skeletor.css'
 import './assets/main.scss'
 
 import { createApp } from 'vue'

@@ -1,8 +1,10 @@
 <script setup>
-import MainRating from '@/components/MainRating.vue'
-import MainButton from '@/components/MainButton.vue'
+import MainRating from '@/components/home/MainRating.vue'
+import MainButton from '@/components/shared/MainButton.vue'
+import { Skeletor } from 'vue-skeletor'
+import { useImage } from '@vueuse/core'
 
-defineProps({
+const props = defineProps({
   image: {
     type: String,
     default: ''
@@ -22,21 +24,32 @@ defineProps({
   moreLink: {
     type: String,
     default: ''
+  },
+  loading: {
+    type: Boolean,
+    default: false
   }
 })
+
+const { isLoading } = useImage({ src: props.image })
 </script>
 
 <template>
-  <div class="hero" :style="`background-image: url(${image})`">
+  <div class="hero" :style="`background-image: url(${image})`" v-if="!loading && !isLoading">
     <div class="overlay">
       <div class="content">
-        <h2>{{ title }}</h2>
+        <h2>
+          {{ title }}
+        </h2>
 
         <MainRating :rating="rating" v-if="rating" />
         <div class="description" v-html="description" />
         <MainButton :to="moreLink" class="button">See More</MainButton>
       </div>
     </div>
+  </div>
+  <div class="hero" v-else>
+    <Skeletor />
   </div>
 </template>
 

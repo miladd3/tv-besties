@@ -1,8 +1,9 @@
 <script setup>
-import MainRating from '@/components/MainRating.vue'
-import AddToWishList from '@/components/AddToWishList.vue'
+import MainRating from '@/components/home/MainRating.vue'
+import { Skeletor } from 'vue-skeletor'
+import { useImage } from '@vueuse/core'
 
-defineProps({
+const props = defineProps({
   image: {
     type: String,
     default: ''
@@ -22,25 +23,41 @@ defineProps({
   moreLink: {
     type: String,
     default: ''
+  },
+  loading: {
+    type: Boolean,
+    default: false
   }
 })
+
+const { isLoading } = useImage({ src: props.image })
 </script>
 
 <template>
-  <article class="show">
+  <article class="show" v-if="!loading && !isLoading">
     <RouterLink :to="moreLink" class="link">
       <figure class="thumb">
         <img :src="image" :alt="title" />
 
         <div class="overlay">
           <MainRating :rating="rating" />
-
-          <AddToWishList />
         </div>
       </figure>
 
       <h3>{{ title }}</h3>
     </RouterLink>
+  </article>
+  <article class="show" v-else>
+    <div class="link">
+      <figure class="thumb">
+        <img />
+        <div class="skeletor-over">
+          <Skeletor height="100%" width="100%" />
+        </div>
+      </figure>
+
+      <h3><Skeletor /></h3>
+    </div>
   </article>
 </template>
 
@@ -58,6 +75,11 @@ defineProps({
       margin: 0;
       padding: 0;
       display: block;
+      object-fit: cover;
+      aspect-ratio: 0.7;
+      border: none;
+      background: none;
+      outline: 0;
     }
 
     .overlay {
@@ -80,6 +102,14 @@ defineProps({
       padding: 0.625rem;
       justify-content: space-between;
       transition: all 0.3s ease-in-out;
+    }
+
+    .skeletor-over {
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      right: 0;
+      left: 0;
     }
   }
 

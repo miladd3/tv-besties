@@ -1,7 +1,7 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import MainNav from '@/components/MainNav.vue'
-import MainFooter from '@/components/MainFooter.vue'
+import MainNav from '@/components/layout/MainNav.vue'
+import MainFooter from '@/components/layout/MainFooter.vue'
 </script>
 
 <template>

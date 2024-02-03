@@ -1,9 +1,13 @@
 <script setup>
-import RatingIcon from '@/components/RatingIcon.vue'
+import RatingIcon from '@/components/shared/RatingIcon.vue'
 
 defineProps({
   rating: {
     type: [String, Number],
+    default: ''
+  },
+  fill: {
+    type: String,
     default: ''
   }
 })
@@ -11,7 +15,7 @@ defineProps({
 
 <template>
   <div class="rating" v-if="rating">
-    <RatingIcon />
+    <RatingIcon :fill="fill" />
     <span class="number">
       {{ rating }}
     </span>

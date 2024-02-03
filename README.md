@@ -1,6 +1,6 @@
 # tv-bestie
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a Test project using [TV Maze](https://www.tvmaze.com/api) API to create a simple page with simple search and view features
 
 ## Recommended IDE Setup
 
