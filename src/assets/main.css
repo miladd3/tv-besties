@@ -1,1 +1,16 @@
+@import './reset.css';
 @import './base.css';
+
+.container {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-link)
+}
+
+a:hover {
+  color: var(--color-link-hover)
+}

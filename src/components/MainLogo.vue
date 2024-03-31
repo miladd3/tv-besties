@@ -3,10 +3,26 @@ import logo from '@/assets/logo.svg'
 </script>
 
 <template>
-  <div>
-    <img :src="logo" alt="" />
+  <RouterLink class="logo" to="/">
+    <img :src="logo" alt="" class="image" />
     <span class="title">TV Bestie</span>
-  </div>
+  </RouterLink>
 </template>
 
-<style scoped></style>
+<style scoped lang="scss">
+.logo {
+  display: flex;
+  align-items: center;
+
+  .image {
+    height: 1.5rem;
+    margin-right: 0.75em;
+  }
+
+  .title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+}
+</style>

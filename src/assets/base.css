@@ -4,17 +4,22 @@
   --color-gray-100: #f6f6f6;
   --color-gray-200: #7d7d7d;
   --color-gray-300: #949494;
-  --color-gray-400: #312d2d;
-  --color-gray-500: #544c4c;
+  --color-gray-400: #544c4c;
+  --color-gray-500: #312d2d;
   --color-red-400: #dd131f;
+  --color-blue-400: #136edd;
+  --color-blue-500: #074a9f;
 }
 
 /* semantic color variables for this project */
 :root {
   --color-background: var(--color-white);
 
-  --color-text: var(--color-gray-400);
-  --color-text-muted: var(--color-gray-500);
+  --color-link: var(--color-blue-400);
+  --color-link-hover: var(--color-blue-500);
+  --color-text: var(--color-gray-500);
+  --color-text-muted: var(--color-gray-400);
+  --color-primary: var(--color-red-400);
 
   --section-gap: 160px;
 }
@@ -49,3 +54,4 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
