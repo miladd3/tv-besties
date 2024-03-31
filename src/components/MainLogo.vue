@@ -5,6 +5,7 @@ import logo from '@/assets/logo.svg'
 <template>
   <div>
     <img :src="logo" alt="" />
+    <span class="title">TV Bestie</span>
   </div>
 </template>
 

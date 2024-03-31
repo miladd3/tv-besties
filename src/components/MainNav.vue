@@ -1,7 +1,13 @@
-<script setup></script>
+<script setup>
+import MainLogo from '@/components/MainLogo.vue'
+import SearchInput from '@/components/SearchInput.vue'
+</script>
 
 <template>
-  <div class="main-nav"></div>
+  <nav class="main-nav">
+    <MainLogo />
+    <SearchInput />
+  </nav>
 </template>
 
 <style scoped></style>
