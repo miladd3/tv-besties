@@ -1,5 +1,9 @@
-<script setup></script>
+<script setup>
+import MainHero from '@/components/MainHero.vue'
+</script>
 
 <template>
-  <main></main>
+  <main>
+    <MainHero />
+  </main>
 </template>
