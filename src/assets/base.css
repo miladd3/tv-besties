@@ -2,6 +2,7 @@
 :root {
   --color-white: #ffffff;
   --color-gray-100: #f6f6f6;
+  --color-gray-150: #ececec;
   --color-gray-200: #7d7d7d;
   --color-gray-300: #949494;
   --color-gray-400: #544c4c;
@@ -20,6 +21,7 @@
   --color-text: var(--color-gray-500);
   --color-text-muted: var(--color-gray-400);
   --color-primary: var(--color-red-400);
+  --color-border: var(--color-gray-150);
 
   --section-gap: 160px;
 }
