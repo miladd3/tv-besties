@@ -11,12 +11,12 @@ export const searchPeople = async ({ query }) => {
 }
 
 export const getShowById = async ({ showId }) => {
-  const { data } = await axios.get(`/shows/${showId}`)
+  const { data } = await axios.get(`/shows/${showId}?embed=images`)
   return data
 }
 
-export const getAllShows = async ({ showId }) => {
-  const { data } = await axios.get(`/shows/${showId}`)
+export const getAllShows = async ({ page } = { page: 1 }) => {
+  const { data } = await axios.get(`/shows`, { params: { page } })
   return data
 }
 
