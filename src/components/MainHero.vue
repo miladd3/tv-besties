@@ -1,5 +1,6 @@
 <script setup>
 import MainRating from '@/components/MainRating.vue'
+import MainButton from '@/components/MainButton.vue'
 
 defineProps({
   image: {
@@ -33,7 +34,7 @@ defineProps({
 
         <MainRating :rating="rating" v-if="rating" />
         <div class="description" v-html="description" />
-        <RouterLink :to="moreLink" class="button">See More</RouterLink>
+        <MainButton :to="moreLink" class="button">See More</MainButton>
       </div>
     </div>
   </div>
@@ -76,21 +77,8 @@ defineProps({
   }
 
   .button {
-    display: flex;
-    align-items: center;
-    width: 121px;
-    height: 40px;
-    justify-content: center;
-    font-size: 0.75rem;
-    background: linear-gradient(
-      180deg,
-      var(--color-primary-dark) 0%,
-      var(--color-primary) 100%,
-      var(--color-primary) 100.01%
-    );
+    width: 7.5rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    color: var(--color-white);
-    border-radius: 0.5rem;
     margin-top: 0.75rem;
   }
 }

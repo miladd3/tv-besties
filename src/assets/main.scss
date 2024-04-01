@@ -1,5 +1,6 @@
-@import './reset.css';
-@import './base.css';
+@import 'reset';
+@import 'grid';
+@import 'base';
 
 .container {
   max-width: 75rem;

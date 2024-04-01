@@ -4,20 +4,19 @@ import { computed, onMounted, ref } from 'vue'
 import { getAllShows, getShowById } from '@/API/index.js'
 import { heroId } from '@/conts.js'
 import ShowItem from '@/components/ShowItem.vue'
-import MainFooter from '@/components/MainFooter.vue'
 
 const shows = ref([])
 
 const heroShow = ref({})
 const heroShowImage = computed(
   () =>
-    heroShow.value?._embedded?.images.filter((o) => (o.type = 'Background'))[2].resolutions.original
-      .url
+    heroShow.value?._embedded?.images.filter((o) => (o.type = 'Background'))[2]?.resolutions
+      .original.url
 )
 const first20Shows = computed(() => shows.value?.slice(0, 20))
 onMounted(async () => {
   shows.value = await getAllShows()
-  heroShow.value = await getShowById({ showId: heroId })
+  heroShow.value = await getShowById({ showId: heroId, embed: ['images'] })
 })
 </script>
 
@@ -47,7 +46,6 @@ onMounted(async () => {
       </div>
     </div>
   </main>
-  <MainFooter />
 </template>
 
 <style lang="scss" title="">

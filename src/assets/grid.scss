@@ -1,0 +1,53 @@
+// Variables
+@use "sass:math";
+
+$grid-columns: 12;
+$breakpoints: (
+        'sm': 576px,
+        'md': 768px,
+        'lg': 992px,
+        'xl': 1200px,
+);
+
+// Mixin for responsive breakpoints
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+  @else {
+    @warn "Unknown breakpoint: #{$breakpoint}.";
+  }
+}
+
+// Base row styling
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+// Dynamic column generation
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    flex: 0 0 percentage($i / $grid-columns);
+    max-width: percentage( math.div($i, $grid-columns));
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+// Responsive columns
+@each $breakpoint, $breakpoint-width in $breakpoints {
+  @include respond-to($breakpoint) {
+    @for $i from 1 through $grid-columns {
+      .col-#{$breakpoint}-#{$i} {
+        flex: 0 0 percentage($i / $grid-columns);
+        max-width: percentage($i / $grid-columns);
+      }
+    }
+  }
+}
+

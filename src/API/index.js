@@ -10,8 +10,12 @@ export const searchPeople = async ({ query }) => {
   return data
 }
 
-export const getShowById = async ({ showId }) => {
-  const { data } = await axios.get(`/shows/${showId}?embed=images`)
+export const getShowById = async ({ showId, embed = [] }) => {
+  const { data } = await axios.get(`/shows/${showId}`, {
+    params: {
+      ...(embed.length ? { embed: embed } : null)
+    }
+  })
   return data
 }
 

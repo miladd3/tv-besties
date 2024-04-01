@@ -1,10 +1,17 @@
 <script setup>
 import WishlistIcon from '@/components/WishlistIcon.vue'
+
+defineProps({
+  fill: {
+    type: String,
+    default: '#fff'
+  }
+})
 </script>
 
 <template>
   <button class="add-to-wishlist">
-    <WishlistIcon fill="#fff" width="12px" height="12px" />
+    <WishlistIcon :fill="fill" width="12px" height="12px" />
   </button>
 </template>
 
