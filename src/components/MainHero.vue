@@ -1,5 +1,5 @@
 <script setup>
-import RatingIcon from '@/components/RatingIcon.vue'
+import MainRating from '@/components/MainRating.vue'
 
 defineProps({
   image: {
@@ -31,12 +31,7 @@ defineProps({
       <div class="content">
         <h2>{{ title }}</h2>
 
-        <div class="rating">
-          <RatingIcon />
-          <span class="number">
-            {{ rating }}
-          </span>
-        </div>
+        <MainRating :rating="rating" v-if="rating" />
         <div class="description" v-html="description" />
         <RouterLink :to="moreLink" class="button">See More</RouterLink>
       </div>
@@ -74,13 +69,8 @@ defineProps({
         font-size: 3rem;
       }
 
-      .rating {
-        display: flex;
-        align-items: center;
-        .number {
-          margin-left: 0.5rem;
-          font-size: 0.75rem;
-        }
+      .description {
+        margin-top: 0.5rem;
       }
     }
   }
@@ -92,7 +82,12 @@ defineProps({
     height: 40px;
     justify-content: center;
     font-size: 0.75rem;
-    background: linear-gradient(180deg, #a6042b 0%, #dd131f 100%, #dd131f 100.01%);
+    background: linear-gradient(
+      180deg,
+      var(--color-primary-dark) 0%,
+      var(--color-primary) 100%,
+      var(--color-primary) 100.01%
+    );
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     color: var(--color-white);
     border-radius: 0.5rem;

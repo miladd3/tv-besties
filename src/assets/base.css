@@ -8,6 +8,7 @@
   --color-gray-400: #544c4c;
   --color-gray-500: #312d2d;
   --color-red-400: #dd131f;
+  --color-red-600: #a6042b;
   --color-blue-400: #136edd;
   --color-blue-500: #074a9f;
 }
@@ -21,6 +22,7 @@
   --color-text: var(--color-gray-500);
   --color-text-muted: var(--color-gray-400);
   --color-primary: var(--color-red-400);
+  --color-primary-dark: var(--color-red-600);
   --color-border: var(--color-gray-150);
 
   --section-gap: 160px;

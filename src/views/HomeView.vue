@@ -2,6 +2,7 @@
 import MainHero from '@/components/MainHero.vue'
 import { computed, onMounted, ref } from 'vue'
 import { getAllShows, getShowById } from '@/API/index.js'
+import { heroId } from '@/conts.js'
 
 const shows = ref([])
 
@@ -13,12 +14,13 @@ const heroShowImage = computed(
 )
 onMounted(async () => {
   shows.value = await getAllShows()
-  heroShow.value = await getShowById({ showId: 47929 })
+  heroShow.value = await getShowById({ showId: heroId })
 })
 </script>
 
 <template>
   <main>
+    <!--    <div style="white-space: pre">{{ heroShow }}</div>-->
     <div class="container">
       <MainHero
         :image="heroShowImage"
