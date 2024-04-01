@@ -10,7 +10,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="rating">
+  <div class="rating" v-if="rating">
     <RatingIcon />
     <span class="number">
       {{ rating }}
@@ -25,6 +25,7 @@ defineProps({
   .number {
     margin-left: 0.5rem;
     font-size: 0.75rem;
+    line-height: 1;
   }
 }
 </style>
