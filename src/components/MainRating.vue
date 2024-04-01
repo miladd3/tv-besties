@@ -3,7 +3,7 @@ import RatingIcon from '@/components/RatingIcon.vue'
 
 defineProps({
   rating: {
-    type: String,
+    type: [String, Number],
     default: ''
   }
 })

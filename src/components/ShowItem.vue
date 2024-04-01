@@ -12,7 +12,7 @@ defineProps({
     default: ''
   },
   rating: {
-    type: String,
+    type: [String, Number],
     default: ''
   },
   description: {

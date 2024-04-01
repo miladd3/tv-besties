@@ -4,6 +4,7 @@ import { computed, onMounted, ref } from 'vue'
 import { getAllShows, getShowById } from '@/API/index.js'
 import { heroId } from '@/conts.js'
 import ShowItem from '@/components/ShowItem.vue'
+import MainFooter from '@/components/MainFooter.vue'
 
 const shows = ref([])
 
@@ -44,10 +45,9 @@ onMounted(async () => {
           />
         </div>
       </div>
-
-      <div style="white-space: pre; width: 100%; overflow: hidden">{{ first20Shows }}</div>
     </div>
   </main>
+  <MainFooter />
 </template>
 
 <style lang="scss" title="">
