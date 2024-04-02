@@ -54,6 +54,8 @@ const { isLoading } = useImage({ src: props.image })
 </template>
 
 <style lang="scss" scoped>
+@use '@/assets/grid';
+
 .hero {
   height: 22.5rem;
   background-size: cover;
@@ -81,10 +83,18 @@ const { isLoading } = useImage({ src: props.image })
       h2 {
         font-weight: 700;
         font-size: 3rem;
+
+        @media only screen and (max-width: map-get(grid.$breakpoints, 'md')) {
+          font-size: 2rem;
+        }
       }
 
       .description {
         margin-top: 0.5rem;
+      }
+
+      @media only screen and (max-width: map-get(grid.$breakpoints, 'md')) {
+        right: 10%;
       }
     }
   }
@@ -93,6 +103,10 @@ const { isLoading } = useImage({ src: props.image })
     width: 7.5rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     margin-top: 0.75rem;
+  }
+
+  @media only screen and (max-width: map-get(grid.$breakpoints, 'md')) {
+    height: 30.5rem;
   }
 }
 </style>

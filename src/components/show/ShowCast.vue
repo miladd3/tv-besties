@@ -13,7 +13,7 @@ defineProps({
   <div class="episodes">
     <h3 class="widget-title">Cast</h3>
     <div class="row">
-      <div class="col-6" v-for="castItem in cast" :key="castItem.id">
+      <div class="col-6 col-md-12" v-for="castItem in cast" :key="castItem.id">
         <CastItem :cast="castItem" />
       </div>
     </div>

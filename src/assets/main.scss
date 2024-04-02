@@ -5,6 +5,11 @@
 .container {
   max-width: 75rem;
   margin: 0 auto;
+
+  @media only screen and (max-width: map-get($breakpoints, 'lg')) {
+    padding: 0 1.2rem;
+  }
+
 }
 
 a {
@@ -25,6 +30,11 @@ a:hover {
   .show-col {
     padding: 1.125rem;
     width: 20%;
+
+    @media only screen and (max-width: map-get($breakpoints, 'md')) {
+      width: 50%;
+
+    }
   }
 }
 

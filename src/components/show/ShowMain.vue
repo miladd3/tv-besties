@@ -38,7 +38,7 @@ const info = computed(() => ({
 <template>
   <main class="main">
     <div class="row">
-      <div class="col-2">
+      <div class="col-2 col-md-12">
         <template v-if="!loading">
           <figure class="thumb">
             <img :src="show?.image?.original" :alt="show.name" />
@@ -47,7 +47,7 @@ const info = computed(() => ({
 
         <Skeletor v-else height="300px" />
       </div>
-      <div class="col-6">
+      <div class="col-6 col-md-12">
         <div class="description" v-html="show.summary" v-if="!loading"></div>
         <template v-else>
           <Skeletor />
@@ -57,7 +57,7 @@ const info = computed(() => ({
           <Skeletor />
         </template>
       </div>
-      <div class="col-4">
+      <div class="col-4 col-md-12">
         <div class="info" v-if="!loading">
           <h3>Show Info</h3>
           <ul class="info-list">
@@ -94,7 +94,7 @@ const info = computed(() => ({
     </div>
 
     <div class="row">
-      <div class="col-6">
+      <div class="col-6 col-md-12">
         <div class="episodes">
           <h3 class="widget-title" v-if="!loading">Latest Episodes</h3>
           <h3 class="widget-title" v-else><Skeletor /></h3>
@@ -108,7 +108,7 @@ const info = computed(() => ({
           <a href="#episodes" title="More episodes" v-if="!loading">More episodes ></a>
         </div>
       </div>
-      <div class="col-6" v-if="!loading">
+      <div class="col-6 col-md-12" v-if="!loading">
         <div class="cast">
           <h3 class="widget-title">Casts</h3>
           <CastItem v-for="castItem in cast" :key="castItem.person.id" :cast="castItem" />

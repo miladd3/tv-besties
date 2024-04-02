@@ -15,6 +15,8 @@ import SearchInput from '@/components/layout/SearchInput.vue'
 </template>
 
 <style scoped lang="scss">
+@use '@/assets/grid';
+
 .main-nav .container {
   display: flex;
   justify-content: space-between;
@@ -28,6 +30,20 @@ import SearchInput from '@/components/layout/SearchInput.vue'
 
   .search {
     margin-left: 50px;
+  }
+
+  @media only screen and (max-width: map-get(grid.$breakpoints, 'md')) {
+    display: block;
+
+    .left,
+    .right {
+      display: block;
+    }
+
+    .search {
+      margin-top: 20px;
+      margin-left: 0;
+    }
   }
 }
 </style>
