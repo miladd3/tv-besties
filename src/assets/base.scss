@@ -28,15 +28,6 @@
   --section-gap: 160px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--color-gray-400);
-
-    --color-text: var(--color-gray-100);
-    --color-text-muted: var(--color-gray-200);
-  }
-}
-
 *,
 *::before,
 *::after {
