@@ -1,6 +1,6 @@
 <script setup>
 import { useRoute } from 'vue-router'
-import { computed, onMounted, ref } from 'vue'
+import { computed, ref } from 'vue'
 import { getShowById } from '@/API/index.js'
 import MainTabs from '@/components/shared/MainTabs.vue'
 import MainTab from '@/components/shared/MainTab.vue'
@@ -18,7 +18,7 @@ const getShow = async () => {
   show.value = await getShowById({ showId: route.params.id, embed: ['images', 'episodes', 'cast'] })
 }
 
-const { loading, error, notFound } = useRequestStates(getShow)
+const { loading } = useRequestStates(getShow)
 
 const episodes = computed(() =>
   ({ ...show?.value })?._embedded?.episodes

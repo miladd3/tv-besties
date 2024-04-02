@@ -1,6 +1,6 @@
 <script setup>
 import { useRoute } from 'vue-router'
-import { computed, onMounted, ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { searchShows } from '@/API/index.js'
 import ShowItem from '@/components/home/ShowItem.vue'
 import useRequestStates from '@/composition/useRequestStates.js'
@@ -25,9 +25,11 @@ watch(searchKey, doRequest)
       <h3>searching for {{ searchKey }}:</h3>
 
       <div class="show-list">
-        <div class="show-col" v-for="index in 10" :key="index" v-if="loading">
-          <ShowItem loading />
-        </div>
+        <template v-if="loading">
+          <div class="show-col" v-for="index in 10" :key="index">
+            <ShowItem loading />
+          </div>
+        </template>
         <div class="show-col" v-for="{ show } in result" :key="show.id" v-else-if="result.length">
           <ShowItem
             :image="show?.image?.medium"

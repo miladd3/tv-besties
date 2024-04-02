@@ -32,7 +32,7 @@ $breakpoints: (
 // Dynamic column generation
 @for $i from 1 through $grid-columns {
   .col-#{$i} {
-    flex: 0 0 percentage($i / $grid-columns);
+    flex: 0 0 percentage(math.div($i, $grid-columns));
     max-width: percentage( math.div($i, $grid-columns));
     padding-right: 15px;
     padding-left: 15px;
@@ -44,8 +44,8 @@ $breakpoints: (
   @include respond-to($breakpoint) {
     @for $i from 1 through $grid-columns {
       .col-#{$breakpoint}-#{$i} {
-        flex: 0 0 percentage($i / $grid-columns);
-        max-width: percentage($i / $grid-columns);
+        flex: 0 0 percentage( math.div($i , $grid-columns));
+        max-width: percentage( math.div($i , $grid-columns));
       }
     }
   }

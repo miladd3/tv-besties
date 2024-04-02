@@ -1,6 +1,6 @@
 <script setup>
 import MainHero from '@/components/home/MainHero.vue'
-import { computed, onMounted, ref } from 'vue'
+import { computed, ref } from 'vue'
 import { getAllShows, getShowById } from '@/API/index.js'
 import { heroId } from '@/conts.js'
 import ShowItem from '@/components/home/ShowItem.vue'
@@ -24,8 +24,8 @@ const getHero = async () => {
   heroShow.value = await getShowById({ showId: heroId, embed: ['images'] })
 }
 
-const { loading, error, notFound } = useRequestStates(getShows)
-const { loading: loadingHero, error: errorHero } = useRequestStates(getHero)
+const { loading } = useRequestStates(getShows)
+const { loading: loadingHero } = useRequestStates(getHero)
 </script>
 
 <template>
